@@ -179,9 +179,10 @@ public class MainController {
 
     @PostMapping("/vo/registerTest")
     @ResponseBody
-    public String registerTest(UserVo userVo) {
+    public String registerTest(@RequestBody UserVo userVo) {
 
-        return userVo.getName();
+        String name = userVo.getName();
+        return name;
     }
 }
 
