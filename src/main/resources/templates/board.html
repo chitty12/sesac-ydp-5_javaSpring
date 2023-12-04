@@ -28,6 +28,7 @@
                 location.reload();
             });
         }
+
         function editBoard(id) {
             var form = document.getElementById('form_board');
             var data = {
@@ -40,7 +41,9 @@
                 location.reload();
             });
         }
+
         function deleteBoard(id) {
+            console.log(id);
             axios.delete(`/board?id=${id}`).then((res) => {
                 location.reload();
             });
@@ -72,7 +75,7 @@
         <th>수정</th>
         <th>삭제</th>
     </tr>
-    <!--    타임리프 문법 이용해서 게시판 글 보여주기 -->
+    <!-- 타임리프 문법 이용해서 게시판 글 보여주기 -->
     <tr th:each="board:${list}">
         <td th:text="${board.getNo()}">번호</td>
         <td th:text="${board.getId()}">ID</td>
@@ -80,6 +83,7 @@
         <td th:text="${board.getWriter()}">작성자</td>
         <td th:text="${board.getRegistered()}">작성일</td>
         <td><button onclick="editBoard([[${board.getId()}]])" type="button">수정</button></td>
+        <td><button onclick="deleteBoard([[${board.getId()}]])" type="button">삭제</button></td>
     </tr>
 </table>
 </body>
