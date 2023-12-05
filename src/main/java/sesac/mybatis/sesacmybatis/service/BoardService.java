@@ -32,17 +32,22 @@ public class BoardService {
           .build();
       list.add(boardDTO);
     }
+
     return list;
   }
+
   public void insertBoard(Board board) {
     boardMapper.insertBoard(board);
   }
+
   public void patchBoard(Board board) {
     boardMapper.patchBoard(board);
   }
+
   public void deleteBoard(int id) {
     boardMapper.deleteBoard(id);
   }
+
   public int searchBoard(String word) {
     // select 문 자체를 count로 동작시킬 수도 있고
     // v List 로 받아와서 그에 대한 길이를 전달할 수도 있다.
