@@ -7,6 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface BoardMapper {
+//  xml을 무조건 이용하도록 설정함.
   List<Board> getAll();
   void insertBoard(Board board);
   void patchBoard(Board board);

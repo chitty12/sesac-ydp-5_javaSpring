@@ -33,6 +33,7 @@ public class BoardController {
   @ResponseBody
   public void postBoard(@RequestBody Board board){
     // 3. 게시글 작성 - insert
+//    insert를 하기 위해 전달받은 값이 객체 형태(board 안에는 title, content, writer)
     boardService.insertBoard(board);
   }
 

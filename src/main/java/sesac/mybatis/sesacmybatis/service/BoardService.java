@@ -49,6 +49,11 @@ public class BoardService {
   }
 
   public int searchBoard(String word) {
+//    select sql 문을 이용해서 검색할 때
+//  1. select*from board => 검색된 list의 size()
+//  2. select count(*) from board;
+
+
     // select 문 자체를 count로 동작시킬 수도 있고
     // v List 로 받아와서 그에 대한 길이를 전달할 수도 있다.
     List<Board> result = boardMapper.searchBoard(word);
